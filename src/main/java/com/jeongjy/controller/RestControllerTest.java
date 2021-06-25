@@ -16,6 +16,7 @@ public class RestControllerTest {
   @GetMapping("test")
   public ResponseEntity date(@RequestHeader HttpHeaders httpHeaders){
 
+    log.info("특정 헤더 정보 : " + httpHeaders.toSingleValueMap().get("x-client-platform"));
     log.info("헤더 정보 : " + httpHeaders.toSingleValueMap().toString());
 
     return ResponseEntity.ok("good");
